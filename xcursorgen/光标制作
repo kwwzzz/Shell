@@ -1,0 +1,58 @@
+1.准备图片
+把鼠标分为动态和静态两种，动态的如等待状态的鼠标，大部分鼠标是静态的
+动态：动画的帧数x大小的种类数
+静态：大小的种类数
+
+2.写conf文件
+內容格式為：
+<size> <xhot> <yhot> <filename> <ms-delay>
+<size>处写鼠标的大小（像素）
+<xhot><yhot>鼠标的有效区域，一般都写0(注1）
+<filename>图片名
+<ms-delay>动态鼠标使用，每帧图片的间隔时间
+
+注1：若右侧鼠标（↗），xhot应该填size的值，yhot填0。若拖动时的鼠标（↔）xhot和yhot均应是size/2
+
+3.生成
+xcursorgen xxxx.conf xxxx
+
+Example:
+一、left_ptr文件
+
+1.准备图片
+left_ptr显然是静态的，只需用准备不同大小的图片即可，这里为了示意只准备了两个大小
+left_ptr_16.png  left_ptr_64.png
+
+2.写left_ptr.conf文件
+
+16 0 0 left_ptr_16.png 0
+64 0 0 left_ptr_64.png 0
+
+3.在terminal中用xcursorgen命令进行转化
+xcursorgen left_ptr.conf left_ptr
+
+二、watch文件
+1.准备图片
+watch是处于等待状态的鼠标形状，是动态的，为了示意这里准备两种大小，动画四帧
+watch_1_16.png
+watch_1_32.png
+watch_2_16.png
+watch_2_32.png
+watch_3_16.png
+watch_3_32.png
+watch_4_16.png
+watch_4_32.png
+
+2.写watch.conf文件
+
+16 0 0 watch_1_16.png 50
+16 0 0 watch_2_16.png 50
+16 0 0 watch_3_16.png 50
+16 0 0 watch_4_16.png 50
+32 0 0 watch_1_32.png 50
+32 0 0 watch_2_32.png 50
+32 0 0 watch_3_32.png 50
+32 0 0 watch_4_32.png 50
+
+3.在terminal中用xcursorgen命令进行转化
+xcursorgen watch.conf watch
