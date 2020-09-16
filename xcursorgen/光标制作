@@ -11,22 +11,24 @@
 <filename>图片名
 <ms-delay>动态鼠标使用，每帧图片的间隔时间
 
-注1：若右侧鼠标（↗），xhot应该填size的值，yhot填0。若拖动时的鼠标（↔）xhot和yhot均应是size/2
+注1：
+若右侧鼠标（↗），xhot应该填size的值，yhot填0。
+若右侧鼠标（↗），xhot应该填size/4的值，yhot填0。
+若拖动时的鼠标（↔）xhot和yhot均应是size/2。
+文本间隙选择（I）xhot和yhot均应该是size/2。
 
 3.生成
 xcursorgen xxxx.conf xxxx
 
-Example:
-一、left_ptr文件
-
+一、静态文件
 1.准备图片
 left_ptr显然是静态的，只需用准备不同大小的图片即可，这里为了示意只准备了两个大小
-left_ptr_16.png  left_ptr_64.png
+left_ptr_24.png  left_ptr_32.png
 
 2.写left_ptr.conf文件
 
-16 0 0 left_ptr_16.png 0
-64 0 0 left_ptr_64.png 0
+24 0 0 left_ptr_24.png 0
+32 0 0 left_ptr_32.png 0
 
 3.在terminal中用xcursorgen命令进行转化
 xcursorgen left_ptr.conf left_ptr
