@@ -25,13 +25,13 @@ function readfile ()
    then
     if [ "${file##*_}"x = "24.png"x ];
     then
-     sed -i  "1i24 0 0 ${file%_*}_24.png 30" ${file%_*}.conf
+     sed -i  "1i24 6 0 ${file%_*}_24.png 30" ${file%_*}.conf
 	elif [ "${file##*_}"x = "32.png"x ];
 	then
-     sed -i  "1i32 0 0 ${file%_*}_32.png 30" ${file%_*}.conf
+     sed -i  "1i32 8 0 ${file%_*}_32.png 30" ${file%_*}.conf
 	elif [ "${file##*_}"x = "48.png"x ];
 	then
-     sed -i  "1i48 0 0 ${file%_*}_48.png 30" ${file%_*}.conf
+     sed -i  "1i48 12 0 ${file%_*}_48.png 30" ${file%_*}.conf
 	else
 	 echo "E：图片名错误！"
 	fi
@@ -41,15 +41,15 @@ function readfile ()
     if [ "${file##*_}"x = "24.png"x ];
     then
      #sed -e  "1i24 0 0 ${file%_*}.png 30" ${file%_*}.conf
-	 echo "24 0 0 ${file%_*}_24.png 30" >>${file%_*}.conf
+	 echo "24 6 0 ${file%_*}_24.png 30" >>${file%_*}.conf
 	elif [ "${file##*_}"x = "32.png"x ];
 	then
      #sed -e  "1i32 0 0 ${file%_*}.png 30" ${file%_*}.conf
-	 echo "32 0 0 ${file%_*}_32.png 30" >>${file%_*}.conf
+	 echo "32 8 0 ${file%_*}_32.png 30" >>${file%_*}.conf
 	elif [ "${file##*_}"x = "48.png"x ];
 	then
      #sed -e  "1i48 0 0 ${file%_*}.png 30" ${file%_*}.conf
-	 echo "48 0 0 ${file%_*}_48.png 30" >>${file%_*}.conf
+	 echo "48 12 0 ${file%_*}_48.png 30" >>${file%_*}.conf
 	else
 	 echo "E：图片名错误！"
 	fi
